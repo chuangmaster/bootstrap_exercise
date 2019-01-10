@@ -29,6 +29,7 @@ body {
 
   .mb-resp {
     margin-bottom: 1rem; } }
-#boxes .card1 {
-  background-color: #fff;
-  border-color: #3292a6; }
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid; }
