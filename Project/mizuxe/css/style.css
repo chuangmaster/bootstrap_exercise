@@ -33,3 +33,11 @@ body {
   width: 50%;
   margin: auto;
   border-bottom: 1px #ddd solid; }
+
+#autohrs img {
+  margin: -50px; }
+#autohrs .card:hover {
+  background-color: #3292a6;
+  color: #fff; }
+#autohrs .fab {
+  color: #fff; }
