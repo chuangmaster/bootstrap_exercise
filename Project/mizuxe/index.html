@@ -178,7 +178,7 @@
       </div>
     </section>
     <!-- AUTHOR -->
-    <section id="autohrs" class="py-5 text-center">
+    <section id="authors" class="py-5 text-center">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -291,6 +291,52 @@
         </div>
       </div>
     </section>
+    <!-- Contact-->
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <h1>Get In Touch</h1>
+            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, ab.</p>
+            <form>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-user"></i> </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name" />
+              </div>
+
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-envelope-open"></i> </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" />
+              </div>
+
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> <i class="fas fa-pencil-alt"></i> </span>
+                </div>
+                <textarea class="form-control" rows="5"></textarea>
+              </div>
+              <button class="btn btn-lg btn-block btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="col-lg-3"><img src="img/mlogo.png" alt="" class="img img-fluid" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer id="main-footer" class="bg-primary py-5 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto">
+            <p class="lead text-center">Copyright &copy;<span id="year"></span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
@@ -311,6 +357,29 @@
     <script>
       // Get the current year for the copyright
       $('#year').text(new Date().getFullYear());
+
+      // Scrollspy Init
+      $('body').scrollspy({ target: '#main-menu' }); //if the body don't have data-spy="scroll" property, this line must to exist.
+
+      // Smooth Scrolling
+      $('#main-menu a').on('click', function(event) {
+        if (this.hash !== '') {
+          event.preventDefault();
+
+          const hash = this.hash;
+
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top //get current coroidnates. such as top, left
+            },
+            800, //duration
+            function() {
+              //call back
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>
